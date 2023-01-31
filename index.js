@@ -1,3 +1,44 @@
-// template_l1wp8b8
+let contrastToggle = false;
 
-// service_fi23r1e
+function toggleContrast() {
+    contrastToggle = !contrastToggle;
+    if (contrastToggle) {
+        document.body.classList += " dark-theme"
+    }
+    else {
+        document.body.classList.remove("dark-theme")
+    }
+}
+
+function contact(event) {
+    event.preventDefault();
+    const loading = document.querySelector('.modal__overlay--loading')
+    const success = document.querySelector('.modal__overlay--success')
+    loading.classList += " modal__overlay--visible"
+    emailjs
+        .sendForm(
+            'service_fi23r1e',
+            'template_l1wp8b8',
+            event.target,
+            'H2Q0bmisjqVudriwO'
+        ).then(() => {
+            loading.classList.remove("modal__overlay--visible");
+            success.classList += " modal__overlay--visible"
+        }).catch(() => {
+            loading.classList.remove("modal__overlay--visible");
+            alert(
+                "The email service is temporarily unavailable. Please contact me direct at j.shaqeal@gmail.com"
+            );
+        })
+}
+
+let isModalOpen = false;
+
+function toggleModal() {
+    if (isModalOpen === true) {
+        isModalOpen = false;
+        return document.body.classList.remove("modal--open");
+    }
+    isModalOpen = true;
+    document.body.classList += " modal--open";
+}

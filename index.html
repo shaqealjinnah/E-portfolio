@@ -7,8 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaqeal Jinnah</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
+    <script src="index.js" defer></script>
     <script src="https://kit.fontawesome.com/8da41696ec.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+</script>
 </head>
 
 <body>
@@ -32,7 +40,7 @@
                     link__hover-effect--black
                     ">Projects</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -44,7 +52,7 @@
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
-                    "><i class="fa-solid fa-circle-half-stroke"></i></a>
+                    "><i class="fa-solid fa-circle-half-stroke" onclick="toggleContrast()"></i></a>
                 </li>
             </ul>
         </nav>
@@ -55,7 +63,7 @@
                 <p class="header__para">I'm a <b class="secondary">Frontend Software Engineer</b> with a strong passion
                     for building web applications with great user experiences.
                     <br>
-                    Here's a bit more <b class="secondary">about me</b>.
+                    Here's a bit more <b class="secondary click" onclick="toggleModal()">about me</b>.
                 </p>
                 <div class="social__list">
                     <a href="#" class="social__link click ">
@@ -70,7 +78,7 @@
                 </div>
             </div>
         </header>
-        <button class="mail__btn click">
+        <button class="mail__btn click" onclick="toggleModal()">
             <i class="fas fa-envelope"></i>
         </button>
         <a href="" id="projects" class="scroll">
@@ -108,18 +116,18 @@
             <div class="modal__half modal__contact">
                 <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
                 <h3 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h3>
-                <form action="" id="contact__form">
+                <form onsubmit="contact(event)" id="contact__form">
                     <div class="form__item">
                         <label class="form__item--label">Name</label>
-                        <input type="text" class="input" name="user_name" required></input>
+                        <input type="text" class="input" name="user_name"></input>
                     </div>
                     <div class="form__item">
                         <label class="form__item--label">Email</label>
-                        <input type="email" class="input" name="user_email" required></input>
+                        <input type="email" class="input" name="user_email"></input>
                     </div>
                     <div class="form__item">
                         <label class="form__item--label">Message</label>
-                        <textarea type="text" class="input" name="message" required></textarea>
+                        <textarea type="text" class="input" name="message"></textarea>
                     </div>
                     <button id="contact__submit" class="form__submit">Send it my way</button>
                 </form>
@@ -132,9 +140,18 @@
                     <br>
                     Looking forward to speaking to you soon.
                 </div>
+                <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
             </div>
-            <i class="fa-solid fa-xmark modal__exit click"></i>
         </div>
+        <img src="assets/semi circle.svg" class="shape shape--0">
+        <img src="assets/circle.svg" class="shape shape--1">
+        <img src="assets/squiggly.svg" class="shape shape--2">
+        <img src="assets/circle.svg" class="shape shape--3">
+        <img src="assets/triangle.svg" class="shape shape--4">
+        <img src="assets/circle.svg" class="shape shape--5">
+        <img src="assets/squiggly.svg" class="shape shape--6">
+        <img src="assets/circle.svg" class="shape shape--7">
+        <img src="assets/semi circle.svg" class="shape shape--8">
     </section>
     <section id="projects">
         <div class="container">
@@ -255,7 +272,7 @@
                         footer__social--link
                         link__hover-effect 
                         link__hover-effect--white
-                        ">
+                        " onclick="toggleModal()">
                         Contact
                     </a>
                     <a href="#" class="
