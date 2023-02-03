@@ -589,6 +589,7 @@ nav {
 
 
 footer {
+    position: relative;
     background-color: #242424;
     padding: 6% 0;
 }
@@ -689,4 +690,33 @@ footer {
 .shape--8 {
     top: 80vh;
     left: 80vw;
+}
+
+
+/* Small phones, tables, large smart phones */
+@media (max-width: 768px) {
+    .title {
+        font-size: 80px;
+    }
+    .header__para {
+        font-size: 24px;
+        line-height: 2;
+        max-width: 450px;
+    }
+    .modal {
+        top: 0;
+        left: 0;
+        transform: none;
+        height: auto;
+        width: 100%;
+        flex-direction: column-reverse;
+        border-radius: 0;
+    }
+    .modal__half {
+        width: 100%;
+    }
+    .modal__language--img {
+        height: 80px;
+        width: 80px;
+    }
 }
