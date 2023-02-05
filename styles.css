@@ -7,6 +7,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #personal-logo {
     filter: invert(1);
     width: 50px;
@@ -699,7 +703,7 @@ footer {
         font-size: 80px;
     }
     .header__para {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 2;
         max-width: 450px;
     }
@@ -716,7 +720,39 @@ footer {
         width: 100%;
     }
     .modal__language--img {
-        height: 80px;
-        width: 80px;
+        max-width: 80px;
+        max-width: 80px;
+    }
+}
+
+/* Small Phones */
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 52px;
+    }
+    .header__para {
+        font-size: 18px;
+    }
+    .nav__link:first-child {
+        display: none;
+    }
+    .project__description--para {
+        display: none;
+    }
+    .project__description {
+        left: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .project__description--sub-title {
+        margin-bottom: 8px;
+    }
+    .modal__half {
+        padding: 40px;
+    }
+    .shape--4 {
+        display: none;
     }
 }
